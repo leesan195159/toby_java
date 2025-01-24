@@ -21,12 +21,4 @@ public class TomcatWebServerConfig {
         factory.setPort(properties.getPort());
         return factory;
     }
-
-    @Bean
-    public ServerProperties serverProperties(Environment environment) {
-        ServerProperties properties = new ServerProperties();
-        properties.setContextPath(environment.getProperty("contextPath"));
-        properties.setPort(Integer.parseInt(environment.getProperty("port")));
-        return properties;
-    }
 }
